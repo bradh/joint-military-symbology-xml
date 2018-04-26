@@ -1,8 +1,8 @@
 # JMSML Schema Overview #
 
-The JMSML (XML) schema has been defined to represent the contents of MIL-STD 2525D in digital (machine readable) form.  Throughout this document, any reference to "the standards" should be construed as meaning both of these two standards.  Only when one standard needs to be singled out will it be mentioned by name.
+The JMSML (XML) schema has been defined to represent the contents of MIL-STD-2525D in digital (machine readable) form.  Throughout this document, any reference to "the standard" should be construed as meaning this standards.
 
-MIL-STD 2525C is a standard that set forth, and illustrated, a set of military symbols and some rules for applying amplification to those symbols.  2525D is different in that it set forth and illustrated sets of symbol pieces/parts that can be combined using various well laid out rules, and amplified with additional objects.  This makes the number of possible symbols enormous, and dramatically changes the way one should look at and implement newer standards.
+MIL-STD-2525C is a standard that set forth, and illustrated, a set of military symbols and some rules for applying amplification to those symbols.  MIL-STD-2525D is different in that it set forth and illustrated sets of symbol pieces/parts that can be combined using various well laid out rules, and amplified with additional objects.  This makes the number of possible symbols enormous, and dramatically changes the way one should look at and implement the standard.
 
 <img src="../svg/sidc.png">
 
@@ -40,7 +40,7 @@ Standard identity is defined in the standards as a set of values, one of which c
 
 <img src="images/standardidentity.jpg">
 
-The two standards, informally, categorize standard identities into four distinct groups, based on a common frame shape (Unknown, Friend, Neutral, and Hostile).  
+The standard, informally, categorizes standard identities into four distinct groups, based on a common frame shape (Unknown, Friend, Neutral, and Hostile).  
 
 The StandardIdentityGroups collection defines a set of elements designed to represent these standard identity groups.
 
@@ -48,7 +48,7 @@ The StandardIdentityGroups collection defines a set of elements designed to repr
 
 ## Dimension ##
 
-Dimension in the standards help define the frame shape of a military symbol.  Dimensions consist of multiple symbol sets.  For example, the Air dimension contains the Air and Air Missile symbol sets, whose symbols are all drawn using the same frame shapes.  Dimensions also define a set of Fields, data that helps map the generic Amplifiers list in the  Library element to dimension or battle space specific message/database fields.
+Dimension in the standard helps define the frame shape of a military symbol.  Dimensions consist of multiple symbol sets.  For example, the Air dimension contains the Air and Air Missile symbol sets, whose symbols are all drawn using the same frame shapes.  Dimensions also define a set of Fields, data that helps map the generic Amplifiers list in the  Library element to dimension or battle space specific message/database fields.
 
 The Dimensions collection defines a set of Dimension elements, each of which encapsulates the standard's concept of a dimension or battle space characteristic.
 
@@ -56,7 +56,7 @@ The Dimensions collection defines a set of Dimension elements, each of which enc
 
 ## Affiliation ##
 
-The standards contain three tables, each table represents a single context.  Each context table shows the frames that should be used based on a given standard identity and dimension.  
+The standard contains three tables, each table represents a single context.  Each context table shows the frames that should be used based on a given standard identity and dimension.  
 
 JMSML uses an Affiliation to map elements belonging to each of those three types (Context, StandardIdentity, and Dimension) Each Affiliation element then points to a specific frame svg file.
 
@@ -86,7 +86,7 @@ These three types of "entity" are all mostly equivalent in their structure.  Eac
 
 <img src="images/entity.jpg">
 
-The standards specify that the Land Unit symbol set contains a collection of four special entity subtypes.  These four icons are full-frame and used to further modify an entity type with either an indicator for HQ element, division and below support, corps support, or echelons above corps support.
+The standard specifies that the Land Unit symbol set contains a collection of four special entity subtypes.  These four icons are full-frame and used to further modify an entity type with either an indicator for HQ element, division and below support, corps support, or echelons above corps support.
 
 The symbol set schema includes a SpecialEntitySubtypes collection that defines these special entity subtypes.  As these are all full frame icons, each entry has to point to four different svg files (see the aforementioned explanation).
 
@@ -106,7 +106,7 @@ LimitUseTo is a special attribute on Modifier elements that can hold a space sep
 
 ## Legacy Support ##
 
-Backward compatibility with MIL-STD 2525C, and the means to convert SIDCs back and forth between old and new standards, is an important goal for creating this schema and XML database in the first place.
+Backward compatibility with MIL-STD-2525C, and the means to convert SIDCs back and forth between old and new standards, is an important goal for creating this schema and XML database in the first place.
 
 Sprinkled throughout this set of schema files are definitions for "legacy" codes.  The JMSML C# API uses this "legacy" information to parse and then convert SIDCs built for the older standards into SIDCs built for the newer standards, and back again (where two-way conversion is feasible).
 
